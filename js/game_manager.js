@@ -21,7 +21,7 @@ GameManager.prototype.restart = function () {
   this.setup();
 };
 
-// Keep playing after winning (allows going over King (8192))
+// Keep playing after winning (allows going over Ace (8192))
 GameManager.prototype.keepPlaying = function () {
   this.keepPlaying = true;
   this.actuator.continueGame(); // Clear the game won/lost message
@@ -175,7 +175,7 @@ GameManager.prototype.move = function (direction) {
           // Update the score
           self.score += merged.value;
 
-          // The mighty King (8192) tile
+          // The mighty Ace (8192) tile
           if (merged.value === 8192) self.won = true;
         } else {
           self.moveTile(tile, positions.farthest);
